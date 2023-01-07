@@ -1,7 +1,7 @@
 
-docker pull wordpress:5
-docker pull mariadb:10
-docker pull nginx:alpine
+# docker pull wordpress:5
+# docker pull mariadb:10.8.2
+# docker pull nginx:alpine
 
 
 docker run -d --rm \
@@ -9,9 +9,9 @@ docker run -d --rm \
     --env MARIADB_USER=wp \
     --env MARIADB_PASSWORD=123 \
     --env MARIADB_ROOT_PASSWORD=123 \
-    mariadb:10
+    mariadb:10.8.2
 
-docker exec -it 9ac mysql -u wp -p
+# docker exec -it 9ac mysql -u wp -p
 
 
 docker run -d --rm \
