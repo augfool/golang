@@ -1,0 +1,24 @@
+#chapter 1.3.3
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb
+  template:
+    metadata:
+      labels:
+        app: myweb
+    spec:
+      containers:
+        - name: myweb
+          image: kubeguide/tomcat-app:v1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MYSQL_SERVICE_HOST
+              value: 10.101.203.32
