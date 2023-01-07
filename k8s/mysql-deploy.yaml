@@ -6,7 +6,8 @@ metadata:
 spec:
   replicas: 1 #Pod副本的期待数量
   selector:
-    app: mysql #符合目标的Pod拥有此标签
+    matchLabels:
+      app: mysql #符合目标的Pod拥有此标签
   template: #根据此模板创建Pod的副本（实例）
     metadata:
       labels:
